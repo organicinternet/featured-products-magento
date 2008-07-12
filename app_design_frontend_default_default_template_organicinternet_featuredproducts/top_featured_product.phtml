@@ -2,11 +2,14 @@
 <div class="product-info-box">
     <div class="product-essential">
         <div class="top-featured-product">
-             <div class="product-images">
+            <div class="product-images" style="float: right; margin: 0 0 1em 1em;">
                 <a href="<?php echo $_item->getProductUrl() ?>"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'image')->resize(200,200) ?>" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" width="200" height="200" /></a>
             </div>
             <div class="product-details">
                 <a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->htmlEscape($_item->getName()) ?></a>
+                <p class="description">
+                 <?php echo $_item->getShortDescription() ?>
+                </p>
                 <?php echo $this->helper('catalog/product')->getPriceHtml($_item) ?>
                 <?php if($_item->isSuper()): ?>
                     <a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->__('View Details') ?></a><br/>
