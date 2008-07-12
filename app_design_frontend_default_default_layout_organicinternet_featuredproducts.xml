@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<layout version="0.0.1">
+    <catalog_category_default>
+        <reference name="left">
+            <block type="organicinternet_featuredproducts/featured_products" name="oi_featuredproducts" as="oi_featuredproducts" template="organicinternet_featuredproducts/featured_products_sidebar.phtml" before="catalog.leftnav"/>
+        </reference>
+        <reference name="content">
+            <block type="organicinternet_featuredproducts/featured_products" name="oi_topfeaturedproduct" as="oi_topfeaturedproduct" template="organicinternet_featuredproducts/top_featured_product.phtml" before="category.products"/>
+        </reference>
+    </catalog_category_default>
+    <catalog_category_layered>
+        <reference name="left">
+            <block type="organicinternet_featuredproducts/featured_products" name="oi_featuredproducts" as="oi_featuredproducts" template="organicinternet_featuredproducts/featured_products_sidebar.phtml" before="catalog.leftnav"/>
+        </reference>
+        <reference name="content">
+            <block type="organicinternet_featuredproducts/featured_products" name="oi_topfeaturedproduct" as="oi_topfeaturedproduct" template="organicinternet_featuredproducts/top_featured_product.phtml" before="category.products"/>
+        </reference>
+    </catalog_category_layered>
+</layout>

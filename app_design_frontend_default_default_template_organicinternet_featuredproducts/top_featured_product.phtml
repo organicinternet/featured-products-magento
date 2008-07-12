@@ -1,0 +1,23 @@
+<?php if ($_item = $this->getTopFeaturedItem()): ?>
+<div class="product-info-box">
+    <div class="product-essential">
+        <div class="top-featured-product">
+             <div class="product-images">
+                <a href="<?php echo $_item->getProductUrl() ?>"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'image')->resize(200,200) ?>" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" width="200" height="200" /></a>
+            </div>
+            <div class="product-details">
+                <a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->htmlEscape($_item->getName()) ?></a>
+                <?php echo $this->helper('catalog/product')->getPriceHtml($_item) ?>
+                <?php if($_item->isSuper()): ?>
+                    <a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->__('View Details') ?></a><br/>
+                <?php else: ?>
+                    <button class="form-button" onclick="setLocation('<?php echo $this->getAddToCartUrl($_item) ?>')"><span><?php echo $this->__('Add to Cart') ?></span></button><br />
+                    <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                    <a href="<?php echo $this->getAddToWishlistUrl($_item) ?>" class="link-cart"><?php echo $this->__('Add to Wishlist') ?></a>
+                    <?php endif; ?>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif ?>

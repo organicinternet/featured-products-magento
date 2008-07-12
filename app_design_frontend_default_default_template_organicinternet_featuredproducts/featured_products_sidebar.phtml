@@ -1,0 +1,30 @@
+<?php if($this->getItems()->getSize()): ?>
+<div class="box base-mini mini-featured-products">
+    <div class="head">
+        <h4><?php echo $this->__('Featured Products') ?></h4>
+    </div>
+    <div class="content">
+        <ol>
+        <?php foreach($this->getItems() as $_item): ?>
+        <li<?php if($_item->isSuper() || !$_item->isSaleable()): ?> class="super-products"<?php endif; ?>>
+            <div class="product-images">
+                <a href="<?php echo $_item->getProductUrl() ?>"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(50) ?>" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" width="50" height="50" /></a>
+            </div>
+            <div class="product-details">
+                <a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->htmlEscape($_item->getName()) ?></a>
+                <?php echo $this->helper('catalog/product')->getPriceHtml($_item) ?>
+                <?php if($_item->isSuper()): ?>
+                    <a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->__('View Details') ?></a><br/>
+                <?php else: ?>
+                    <button class="form-button" onclick="setLocation('<?php echo $this->getAddToCartUrl($_item) ?>')"><span><?php echo $this->__('Add to Cart') ?></span></button>
+                    <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                    <a href="<?php echo $this->getAddToWishlistUrl($_item) ?>" class="link-cart"><?php echo $this->__('Add to Wishlist') ?></a>
+                    <?php endif; ?>
+                <?php endif; ?>
+            </div>
+        </li>
+        <?php endforeach ?>
+        </ol>
+    </div>
+</div>
+<?php endif ?>

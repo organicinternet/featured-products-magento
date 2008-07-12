@@ -1,0 +1,12 @@
+<config>
+    <modules>
+        <OrganicInternet_FeaturedProducts>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Catalog />
+            </depends>
+            <version>0.0.1</version>
+        </OrganicInternet_FeaturedProducts>
+    </modules>
+</config>

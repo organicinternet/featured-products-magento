@@ -1,0 +1,25 @@
+Featured Products Extension For Magento
+---------------------------------------
+
+Inspired by this Magento wiki article: http://github.com/organicinternet/featured-products-magento/tree/master
+
+This extension allows products to be flagged as 'featured' along with a numerical order in which they should be featured, lowest first. The sidebar block shows all products from the currently visible category with a 'Featured Product Order' > 0, lowest number first. If the category 'Is Anchor' then featured products will be selected, still ordered numerically, from the current category and all its children.
+
+The latest release version of this extension should be installed from Magento Connect. If you would like to contribute or get the bleeding edge version, it is available on GitHub - http://github.com/organicinternet/featured-products-magento/tree/master
+
+Users
+-----
+
+Once installed, a new attribute - oi_featured_product_order will appear for all your products. Setting this to 0 or leaving blank will prevent a product being featured. Any other numerical value will feature the product.
+
+As with all things Magento if you wish to modify the behaviour or layout of this extension, override the phtml by copying into your own theme, or override the block using rewrites rather than modifying the original.
+
+Developers
+----------
+
+If you wish to install this extension in your local magento installation and still version control with git, symlink the following files and directories:
+
+app_code_community_OrganicInternet_FeaturedProducts -> app/code/community/OrganicInternet/FeaturedProducts
+app_design_frontend_default_default_layout_organicinternet_featuredproducts.xml -> app/design/frontend/default/default/layout/organicinternet_featuredproducts.xml
+app_design_frontend_default_default_template_organicinternet_featuredproducts -> app/design/frontend/default/default/template/organicinternet_featuredproducts
+app_etc_modules_OrganicInternet_FeaturedProducts.xml -> app/etc/modules/OrganicInternet_FeaturedProducts.xml
